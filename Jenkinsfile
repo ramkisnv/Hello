@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
-                bat '''
+                bash '''
                     echo "PATH = %PATH%"
                     echo "M2_HOME = %M2_HOME%"
                 '''
@@ -15,7 +15,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                    bat 'cd NumberGenerator & mvn install'
+                    bash 'cd NumberGenerator & mvn install'
             }
              post {
                 success {
